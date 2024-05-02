@@ -5,18 +5,21 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@mediapipe/camera_utils':
+    specifier: ^0.3.1675466862
+    version: 0.3.1675466862
+  '@mediapipe/face_detection':
+    specifier: ^0.4.1646425229
+    version: 0.4.1646425229
   '@nextui-org/react':
     specifier: ^2.3.6
     version: 2.3.6(@types/react@18.3.1)(framer-motion@11.1.7)(react-dom@18.3.1)(react@18.3.1)(tailwind-variants@0.2.1)(tailwindcss@3.4.3)
   '@tauri-apps/api':
-    specifier: '>=2.0.0-beta.0'
+    specifier: 2.0.0-beta.11
     version: 2.0.0-beta.11
   '@tauri-apps/plugin-shell':
-    specifier: '>=2.0.0-beta.0'
+    specifier: 2.0.0-beta.3
     version: 2.0.0-beta.3
-  '@tensorflow-models/face-landmarks-detection':
-    specifier: ^1.0.5
-    version: 1.0.5(@mediapipe/face_mesh@0.4.1633559619)(@tensorflow-models/face-detection@1.0.2)(@tensorflow/tfjs-backend-webgl@4.19.0)(@tensorflow/tfjs-converter@4.19.0)(@tensorflow/tfjs-core@4.19.0)
   '@tensorflow-models/hand-pose-detection':
     specifier: ^2.0.1
     version: 2.0.1(@mediapipe/hands@0.4.1675469240)(@tensorflow/tfjs-backend-webgl@4.19.0)(@tensorflow/tfjs-converter@4.19.0)(@tensorflow/tfjs-core@4.19.0)
@@ -27,11 +30,14 @@ dependencies:
     specifier: ^11.1.7
     version: 11.1.7(react-dom@18.3.1)(react@18.3.1)
   react:
-    specifier: ^18.2.0
+    specifier: ^18.3.1
     version: 18.3.1
   react-dom:
-    specifier: ^18.2.0
+    specifier: ^18.3.1
     version: 18.3.1(react@18.3.1)
+  react-webcam:
+    specifier: ^7.2.0
+    version: 7.2.0(react-dom@18.3.1)(react@18.3.1)
 
 devDependencies:
   '@tailwindcss/typography':
@@ -41,13 +47,13 @@ devDependencies:
     specifier: ^0.7.2
     version: 0.7.2(tailwindcss@3.4.3)
   '@tauri-apps/cli':
-    specifier: '>=2.0.0-beta.0'
+    specifier: 2.0.0-beta.15
     version: 2.0.0-beta.15
   '@types/react':
-    specifier: ^18.2.15
+    specifier: ^18.3.1
     version: 18.3.1
   '@types/react-dom':
-    specifier: ^18.2.7
+    specifier: ^18.3.0
     version: 18.3.0
   '@vitejs/plugin-react':
     specifier: ^4.2.1
@@ -59,10 +65,10 @@ devDependencies:
     specifier: ^3.4.3
     version: 3.4.3
   typescript:
-    specifier: ^5.0.2
+    specifier: ^5.4.5
     version: 5.4.5
   vite:
-    specifier: ^5.0.0
+    specifier: ^5.2.10
     version: 5.2.10
 
 packages:
@@ -605,12 +611,12 @@ packages:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@mediapipe/face_detection@0.4.1646425229:
-    resolution: {integrity: sha512-aeCN+fRAojv9ch3NXorP6r5tcGVLR3/gC1HmtqB0WEZBRXrdP6/3W/sGR0dHr1iT6ueiK95G9PVjbzFosf/hrg==}
+  /@mediapipe/camera_utils@0.3.1675466862:
+    resolution: {integrity: sha512-siuXBoUxWo9WL0MeAxIxvxY04bvbtdNl7uCxoJxiAiRtNnCYrurr7Vl5VYQ94P7Sq0gVq6PxIDhWWeZ/pLnSzw==}
     dev: false
 
-  /@mediapipe/face_mesh@0.4.1633559619:
-    resolution: {integrity: sha512-Vc8cdjxS5+O2gnjWH9KncYpUCVXT0h714KlWAsyqJvJbIgUJBqpppbIx8yWcAzBDxm/5cYSuBI5p5ySIPxzcEg==}
+  /@mediapipe/face_detection@0.4.1646425229:
+    resolution: {integrity: sha512-aeCN+fRAojv9ch3NXorP6r5tcGVLR3/gC1HmtqB0WEZBRXrdP6/3W/sGR0dHr1iT6ueiK95G9PVjbzFosf/hrg==}
     dev: false
 
   /@mediapipe/hands@0.4.1675469240:
@@ -3382,39 +3388,6 @@ packages:
       '@tauri-apps/api': 2.0.0-beta.11
     dev: false
 
-  /@tensorflow-models/face-detection@1.0.2(@mediapipe/face_detection@0.4.1646425229)(@tensorflow/tfjs-backend-webgl@4.19.0)(@tensorflow/tfjs-converter@4.19.0)(@tensorflow/tfjs-core@4.19.0):
-    resolution: {integrity: sha512-anjSxy3MnZdTiVluOEQZeaFWM30IPswFM+SltX6wseXKja/AbrHYqamGNZKUylAs2JAyudq+xqTRPS+nA2ourg==}
-    peerDependencies:
-      '@mediapipe/face_detection': ~0.4.0
-      '@tensorflow/tfjs-backend-webgl': ^4.4.0
-      '@tensorflow/tfjs-converter': ^4.4.0
-      '@tensorflow/tfjs-core': ^4.4.0
-    dependencies:
-      '@mediapipe/face_detection': 0.4.1646425229
-      '@tensorflow/tfjs-backend-webgl': 4.19.0(@tensorflow/tfjs-core@4.19.0)
-      '@tensorflow/tfjs-converter': 4.19.0(@tensorflow/tfjs-core@4.19.0)
-      '@tensorflow/tfjs-core': 4.19.0
-      rimraf: 3.0.2
-      tslib: 2.4.0
-    dev: false
-
-  /@tensorflow-models/face-landmarks-detection@1.0.5(@mediapipe/face_mesh@0.4.1633559619)(@tensorflow-models/face-detection@1.0.2)(@tensorflow/tfjs-backend-webgl@4.19.0)(@tensorflow/tfjs-converter@4.19.0)(@tensorflow/tfjs-core@4.19.0):
-    resolution: {integrity: sha512-54XJPi8g29/MknJ33ZBrLsEzr9kw/dJtrJMMD3xrCrnRlfFQPIKQ5PI2Wml55Fz2p4U2hemzBB0/H+S94JddIQ==}
-    peerDependencies:
-      '@mediapipe/face_mesh': ~0.4.0
-      '@tensorflow-models/face-detection': ~1.0.0
-      '@tensorflow/tfjs-backend-webgl': ^3.12.0
-      '@tensorflow/tfjs-converter': ^3.12.0
-      '@tensorflow/tfjs-core': ^3.12.0
-    dependencies:
-      '@mediapipe/face_mesh': 0.4.1633559619
-      '@tensorflow-models/face-detection': 1.0.2(@mediapipe/face_detection@0.4.1646425229)(@tensorflow/tfjs-backend-webgl@4.19.0)(@tensorflow/tfjs-converter@4.19.0)(@tensorflow/tfjs-core@4.19.0)
-      '@tensorflow/tfjs-backend-webgl': 4.19.0(@tensorflow/tfjs-core@4.19.0)
-      '@tensorflow/tfjs-converter': 4.19.0(@tensorflow/tfjs-core@4.19.0)
-      '@tensorflow/tfjs-core': 4.19.0
-      rimraf: 3.0.2
-    dev: false
-
   /@tensorflow-models/hand-pose-detection@2.0.1(@mediapipe/hands@0.4.1675469240)(@tensorflow/tfjs-backend-webgl@4.19.0)(@tensorflow/tfjs-converter@4.19.0)(@tensorflow/tfjs-core@4.19.0):
     resolution: {integrity: sha512-zRA+jz2qOq5FMcyqSFxaQyi6T4YNbMbQhd6SQMI791FQ8yYj23kLgYa73g2NssR5AmM/2ATu9Vcjnf7LUrVLOQ==}
     peerDependencies:
@@ -3686,7 +3659,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001614
-      electron-to-chromium: 1.4.752
+      electron-to-chromium: 1.4.753
       node-releases: 2.0.14
       update-browserslist-db: 1.0.14(browserslist@4.23.0)
 
@@ -3755,6 +3728,7 @@ packages:
 
   /color-name@1.1.3:
     resolution: {integrity: sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw==}
+    dev: true
 
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
@@ -3762,7 +3736,7 @@ packages:
   /color-string@1.9.1:
     resolution: {integrity: sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg==}
     dependencies:
-      color-name: 1.1.3
+      color-name: 1.1.4
       simple-swizzle: 0.2.2
     dev: false
 
@@ -3885,8 +3859,8 @@ packages:
   /eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  /electron-to-chromium@1.4.752:
-    resolution: {integrity: sha512-P3QJreYI/AUTcfBVrC4zy9KvnZWekViThgQMX/VpJ+IsOBbcX5JFpORM4qWapwWQ+agb2nYAOyn/4PMXOk0m2Q==}
+  /electron-to-chromium@1.4.753:
+    resolution: {integrity: sha512-Wn1XKa0Lc5kMe5UIwQc4+i5lhhBggF0l82C1bE3oOMASt4JVqdOyRIVc8mh0kiuL5CCptqwQJBmFbaPglLrN0Q==}
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -4807,6 +4781,16 @@ packages:
       - '@types/react'
     dev: false
 
+  /react-webcam@7.2.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-xkrzYPqa1ag2DP+2Q/kLKBmCIfEx49bVdgCCCcZf88oF+0NPEbkwYk3/s/C7Zy0mhM8k+hpdNkBLzxg8H0aWcg==}
+    peerDependencies:
+      react: '>=16.2.0'
+      react-dom: '>=16.2.0'
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
+
   /react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
@@ -5161,10 +5145,6 @@ packages:
 
   /ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
-
-  /tslib@2.4.0:
-    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
-    dev: false
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
